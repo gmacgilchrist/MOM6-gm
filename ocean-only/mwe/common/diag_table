@@ -1,0 +1,14 @@
+"Experiment expt1"                             
+1 1 1 0 0 0                                            
+"output",      1,"days",1,"days","time",                 
+
+#This is the field section of the diag_table.
+
+# Prognostic Ocean fields:
+#=========================
+
+"ocean_model","u","u","output","all",.false.,"none",2
+"ocean_model","v","v","output","all",.false.,"none",2
+"ocean_model","h","h","output","all",.false.,"none",1
+"ocean_model","e","e","output","all",.false.,"none",2
+"ocean_model","temp","temp","output","all",.false.,"none",2
