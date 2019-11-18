@@ -16,8 +16,8 @@ BULKMIXEDLAYER = False          !
 !=== module MOM_domains ===
 REENTRANT_X = True              !   [Boolean] default = True
 REENTRANT_Y = False             !   [Boolean] default = True
-NIGLOBAL = 40                   !
-NJGLOBAL = 60                   !
+NIGLOBAL = 480                  !
+NJGLOBAL = 320                  !
 
 !=== module MOM_verticalGrid ===
 NK = 50                         !   
