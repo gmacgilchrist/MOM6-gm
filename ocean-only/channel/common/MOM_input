@@ -16,8 +16,8 @@ BULKMIXEDLAYER = False          !
 !=== module MOM_domains ===
 REENTRANT_X = True              !   [Boolean] default = True
 REENTRANT_Y = False             !   [Boolean] default = True
-NIGLOBAL = 480                  !
-NJGLOBAL = 320                  !
+NIGLOBAL = 240                  !
+NJGLOBAL = 160                  !
 
 !=== module MOM_verticalGrid ===
 NK = 50                         !   
@@ -29,17 +29,17 @@ INPUTDIR = "INPUT"              !   default = "."
 COORD_CONFIG = "ALE"            !
 !COORD_FILE = "ts_uniform_1deg.nc"  !
 REGRIDDING_COORDINATE_MODE="Z*" !
-ALE_COORDINATE_CONFIG="FILE:8th-deg_vgrid.nc,dz" !
+ALE_COORDINATE_CONFIG="FILE:4th-deg_vgrid.nc,dz" !
 
 ! === module MOM_grid_init ===
-GRID_CONFIG = "spherical"       !
+GRID_CONFIG = "mercator"       !
 AXIS_UNITS = "degrees"          !   default = "degrees"
 SOUTHLAT = -65.0                !   [k]
 LENLAT = 40.0                   !   [k]
 WESTLON = 0.0                   !   [k]
 LENLON = 60.0                   !   [k]
 TOPO_CONFIG = "file"            !
-TOPO_FILE = "8th-deg_topography.nc"!
+TOPO_FILE = "4th-deg_topography.nc"!
 TOPO_VARNAME = "depth"          !
 MINIMUM_DEPTH = 0.0             !   [m] default = 0.0
 MAXIMUM_DEPTH = 4000.0          !   [m]
@@ -56,11 +56,11 @@ SALT_IC_VAR = "S"     !
 TS_FILE = "8th-deg_TS.nc"       !
 SPONGE = True                    !
 SPONGE_CONFIG = "file"           !
-SPONGE_STATE_FILE = "8th-deg_sponge.nc"  !
+SPONGE_STATE_FILE = "4th-deg_sponge.nc"  !
 SPONGE_ETA_VAR = "eta"           !
 SPONGE_PTEMP_VAR = "T" !
 SPONGE_SALT_VAR = "S"  !
-SPONGE_DAMPING_FILE = "8th-deg_sponge.nc"!
+SPONGE_DAMPING_FILE = "4th-deg_sponge.nc"!
 SPONGE_IDAMP_VAR = "idamp"       !
 
 ! === module MOM_tracer_flow_control ===
@@ -110,27 +110,27 @@ VARIABLE_BUOYFORCE = False      !   [Boolean] default = True
 BUOY_CONFIG = "file"            !
 ARCHAIC_OMIP_FORCING_FILE = False !
 WIND_CONFIG = "file"            !
-WIND_FILE = "8th-deg_wind.nc" !
+WIND_FILE = "4th-deg_wind.nc" !
 WINDSTRESS_X_VAR = "taux"       !
 WINDSTRESS_Y_VAR = "tauy"       !
 RESTOREBUOY = True             !
-SSTRESTORE_FILE = "8th-deg_TS.nc"      !
-SALINITYRESTORE_FILE = "8th-deg_TS.nc" !
+SSTRESTORE_FILE = "4th-deg_TS.nc"      !
+SALINITYRESTORE_FILE = "4th-deg_TS.nc" !
 SST_RESTORE_VAR = "SST"              !
 SSS_RESTORE_VAR = "SSS"              !
 FLUXCONST = 1.0                         ! [m day-1] Like a piston velocity
-LONGWAVE_FILE = "8th-deg_buoyancy.nc"     !
-SHORTWAVE_FILE = "8th-deg_buoyancy.nc"    !
-EVAPORATION_FILE = "8th-deg_buoyancy.nc"  !
-LATENTHEAT_FILE = "8th-deg_buoyancy.nc"   !
-SENSIBLEHEAT_FILE = "8th-deg_buoyancy.nc" !
-RAIN_FILE = "8th-deg_buoyancy.nc"         !
-SNOW_FILE = "8th-deg_buoyancy.nc"         !
-RUNOFF_FILE = "8th-deg_buoyancy.nc"       !
+LONGWAVE_FILE = "4th-deg_buoyancy.nc"     !
+SHORTWAVE_FILE = "4th-deg_buoyancy.nc"    !
+EVAPORATION_FILE = "4th-deg_buoyancy.nc"  !
+LATENTHEAT_FILE = "4th-deg_buoyancy.nc"   !
+SENSIBLEHEAT_FILE = "4th-deg_buoyancy.nc" !
+RAIN_FILE = "4th-deg_buoyancy.nc"         !
+SNOW_FILE = "4th-deg_buoyancy.nc"         !
+RUNOFF_FILE = "4th-deg_buoyancy.nc"       !
 
 ! === module MOM_sum_output ===
 DATE_STAMPED_STDOUT = False     !   [Boolean] default = True
 
 ! === module MOM_main (MOM_driver) ===
-DAYMAX = 2880.0               !   [days] default = 10.0
+DAYMAX = 2.0               !   [days] default = 10.0
 RESTART_CONTROL = 0             !   default = 1
