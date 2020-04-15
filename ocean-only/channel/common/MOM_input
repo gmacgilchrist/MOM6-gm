@@ -33,6 +33,7 @@ ALE_COORDINATE_CONFIG="FILE:4th-deg_vgrid.nc,dz" !
 
 ! === module MOM_grid_init ===
 GRID_CONFIG = "mercator"       !
+ISOTROPIC = True               !
 AXIS_UNITS = "degrees"          !   default = "degrees"
 SOUTHLAT = -65.0                !   [k]
 LENLAT = 40.0                   !   [k]
@@ -53,7 +54,7 @@ VELOCITY_FILE = "4th-deg_velocity.nc" !
 TS_CONFIG = "file"              !
 TEMP_IC_VAR = "T"     !
 SALT_IC_VAR = "S"     !
-TS_FILE = "8th-deg_TS.nc"       !
+TS_FILE = "4th-deg_TS.nc"       !
 SPONGE = True                    !
 SPONGE_CONFIG = "file"           !
 SPONGE_STATE_FILE = "4th-deg_sponge.nc"  !
@@ -132,5 +133,5 @@ RUNOFF_FILE = "4th-deg_buoyancy.nc"       !
 DATE_STAMPED_STDOUT = False     !   [Boolean] default = True
 
 ! === module MOM_main (MOM_driver) ===
-DAYMAX = 2.0               !   [days] default = 10.0
+DAYMAX = 5760.0               !   [days] default = 10.0
 RESTART_CONTROL = 0             !   default = 1
