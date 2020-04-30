@@ -46,15 +46,15 @@ MINIMUM_DEPTH = 0.0             !   [m] default = 0.0
 MAXIMUM_DEPTH = 4000.0          !   [m]
 
 ! === module MOM_state_initialization ===
-THICKNESS_CONFIG = "coord"      !
+! THICKNESS_CONFIG = "coord"      !
 VELOCITY_CONFIG = "zero"        !
 VELOCITY_FILE = "4th-deg_velocity.nc" !
 !INITIAL_U_CONST = 0.5           !   [m s-1]
 !INITIAL_V_CONST = 0             !   [m s-1]
-TS_CONFIG = "file"              !
-TEMP_IC_VAR = "T"     !
-SALT_IC_VAR = "S"     !
-TS_FILE = "4th-deg_TS.nc"       !
+! TS_CONFIG = "file"              !
+! TEMP_IC_VAR = "T"     !
+! SALT_IC_VAR = "S"     !
+! TS_FILE = "4th-deg_TS.nc"       !
 SPONGE = True                    !
 SPONGE_CONFIG = "file"           !
 SPONGE_STATE_FILE = "4th-deg_sponge.nc"  !
@@ -63,6 +63,36 @@ SPONGE_PTEMP_VAR = "T" !
 SPONGE_SALT_VAR = "S"  !
 SPONGE_DAMPING_FILE = "4th-deg_sponge.nc"!
 SPONGE_IDAMP_VAR = "idamp"       !
+
+! === module MOM_initialize_layers_from_Z ===
+INIT_LAYERS_FROM_Z_FILE = True  !   [Boolean] default = False
+                                ! If true, intialize the layer thicknesses, temperatures,
+                                ! and salnities from a Z-space file on a latitude-
+                                ! longitude grid.
+TEMP_SALT_Z_INIT_FILE = "4th-deg_TS.nc" ! default = "temp_salt_z.nc"
+                                ! The name of the z-space input file used to initialize
+                                ! the layer thicknesses, temperatures and salinities.
+Z_INIT_FILE_PTEMP_VAR = "T" ! default = "ptemp"
+                                ! The name of the potential temperature variable in
+                                ! TEMP_SALT_Z_INIT_FILE.
+Z_INIT_FILE_SALT_VAR = "S"   ! default = "salt"
+                                ! The name of the salinity variable in
+                                ! TEMP_SALT_Z_INIT_FILE.
+Z_INIT_HOMOGENIZE = False       !   [Boolean] default = False
+                                ! If True, then horizontally homogenize the interpolated initial conditions.
+Z_INIT_ALE_REMAPPING = True     !   [Boolean] default = False
+                                ! If True, then remap straight to model coordinate from file.
+Z_INIT_REMAPPING_SCHEME = "PPM_IH4" ! default = "PPM_IH4"
+                                ! The remapping scheme to use if using Z_INIT_ALE_REMAPPING is True.
+Z_INIT_REMAP_GENERAL = True     !   [Boolean] default = False
+                                ! If false, only initializes to z* coordinates. If true, allows initialization
+                                ! directly to general coordinates.
+Z_INIT_REMAP_FULL_COLUMN = True !   [Boolean] default = True
+                                ! If false, only reconstructs profiles for valid data points. If true, inserts
+                                ! vanished layers below the valid data.
+Z_INIT_REMAP_OLD_ALG = False    !   [Boolean] default = True
+                                ! If false, uses the preferred remapping algorithm for initialization. If true,
+                                ! use an older, less robust algorithm for remapping
 
 ! === module MOM_tracer_flow_control ===
 !USE_generic_tracer=True         !

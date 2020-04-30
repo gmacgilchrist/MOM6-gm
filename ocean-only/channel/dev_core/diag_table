@@ -4,9 +4,12 @@
 #=========================
 "prog",6,"hours",1,"hours","Time",
 #"prog_2d",5,"days",1,"days","Time",
+"ocean_static",          -1, "months", 1, "days", "time"
 
 # Field section:
 #=========================
+
+"ocean_model", "areacello",   "areacello",   "ocean_static", "all", "none", "none", 2
 
 #"ocean_model",	"u",		"u",		"prog",		"all","none","none",2
 #"ocean_model",	"v",		"v",		"prog",		"all","none","none",2
