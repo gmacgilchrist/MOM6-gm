@@ -1,0 +1,89 @@
+"box"
+1 1 1 0 0 0
+
+"ocean_native",          1, "days",   1, "days", "time"
+"ocean_native_snap",     1, "days",   1, "days", "time"
+# "ocean_rho2",            6, "hours",   1, "days", "time"
+# "ocean_rho2_snap",       6, "hours",   1, "days", "time"
+"ocean_static",          -1, "hours",   1, "days", "time" # ocean_static is a protected name. Do not change this line.
+
+
+"ocean_model", "areacello",   "areacello",   "ocean_static", "all", "none", "none", 2
+
+##############
+### NATIVE ###
+# ------------------------------------------------- #
+# Heat + budget terms [get from Andrew Shao github] #
+# ------------------------------------------------- #
+
+# 6-HOURLY MEAN
+"ocean_model",  "temp",                         "temp"                                  "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "rhopot2",                      "rhopot2",                              "ocean_native", "all", "mean", "none", 2
+
+"ocean_model",  "opottemptend",                 "opottemptend",                         "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "opottempdiff",                 "opottempdiff",                         "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "opottemppmdiff",               "opottemppmdiff",                       "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "boundary_forcing_heat_tendency","boundary_forcing_heat_tendency",      "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "frazil_heat_tendency",         "frazil_heat_tendency",                 "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "T_advection_xy",               "T_advection_xy",                       "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "Th_tendency_vert_remap",       "Th_tendency_vert_remap",               "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "internal_heat_heat_tendency",  "internal_heat_heat_tendency",          "ocean_native", "all", "mean", "none", 2
+
+# 6-HOURLY SNAP
+"ocean_model",  "temp",                         "temp"                                  "ocean_native_snap", "all", "none", "none", 2
+"ocean_model",  "rhopot2",                      "rhopot2"                               "ocean_native_snap", "all", "none", "none", 2
+
+# ------------------- #
+# Thickness + budget terms #
+# ------------------- #
+
+# 6-HOURLY MEAN
+"ocean_model",  "thkcello",                     "thkcello",                             "ocean_native", "all", "mean", "none", 2
+
+"ocean_model",  "dhdt",                         "dhdt",                                 "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "dynamics_h_tendency",          "dynamics_h_tendency",                  "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "vert_remap_h_tendency",        "vert_remap_h_tendency",                "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "boundary_forcing_h_tendency",  "boundary_forcing_h_tendency",          "ocean_native", "all", "mean", "none", 2
+"ocean_model",  "internal_heat_h_tendency",     "internal_heat_h_tendency",             "ocean_native", "all", "mean", "none", 2
+
+# 6-HOURLY SNAP
+"ocean_model",  "thkcello",                     "thkcello"                              "ocean_native_snap", "all", "none", "none", 2
+
+# ############
+# ### RHO2 ###
+# # ------------------------------------------------- #
+# # Heat + budget terms [get from Andrew Shao github] #
+# # ------------------------------------------------- #
+# 
+# # 6-HOURLY MEAN
+# "ocean_model_rho2",  "temp",                         "temp"                                  "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "rhopot2",                      "rhopot2",                              "ocean_rho2", "all", "mean", "none", 2
+# 
+# "ocean_model_rho2",  "opottemptend",                 "opottemptend",                         "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "opottempdiff",                 "opottempdiff",                         "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "opottemppmdiff",               "opottemppmdiff",                       "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "boundary_forcing_heat_tendency","boundary_forcing_heat_tendency",      "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "frazil_heat_tendency",         "frazil_heat_tendency",                 "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "T_advection_xy",               "T_advection_xy",                       "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "Th_tendency_vert_remap",       "Th_tendency_vert_remap",               "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "internal_heat_heat_tendency",  "internal_heat_heat_tendency",          "ocean_rho2", "all", "mean", "none", 2
+# 
+# # 6-HOURLY SNAP
+# "ocean_model_rho2",  "temp",                         "temp"                                  "ocean_rho2_snap", "all", "none", "none", 2
+# "ocean_model_rho2",  "rhopot2",                      "rhopot2"                               "ocean_rho2_snap", "all", "none", "none", 2
+# 
+# # ------------------- #
+# # Thickness + budget terms #
+# # ------------------- #
+# 
+# # 6-HOURLY MEAN
+# "ocean_model_rho2",  "thkcello",                     "thkcello",                             "ocean_rho2", "all", "mean", "none", 2
+# 
+# "ocean_model_rho2",  "dhdt",                         "dhdt",                                 "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "dynamics_h_tendency",          "dynamics_h_tendency",                  "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "vert_remap_h_tendency",        "vert_remap_h_tendency",                "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "boundary_forcing_h_tendency",  "boundary_forcing_h_tendency",          "ocean_rho2", "all", "mean", "none", 2
+# "ocean_model_rho2",  "internal_heat_h_tendency",     "internal_heat_h_tendency",             "ocean_rho2", "all", "mean", "none", 2
+# 
+# # 6-HOURLY SNAP
+# "ocean_model_rho2",  "thkcello",                     "thkcello"                              "ocean_rho2_snap", "all", "none", "none", 2

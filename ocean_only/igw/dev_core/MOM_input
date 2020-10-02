@@ -1,0 +1,24 @@
+REENTRANT_X = False
+REENTRANT_Y = True
+NIGLOBAL = 50
+NJGLOBAL = 4
+GRID_CONFIG = "cartesian"
+AXIS_UNITS = "k"
+SOUTHLAT = 0.0
+LENLON = 250.0
+LENLAT = 20.0
+
+LIGHTEST_DENSITY = 1025.05
+DENSITY_RANGE = 1.9
+
+NK = 20
+TOPO_CONFIG = "flat"
+MAXIMUM_DEPTH = 500.0
+
+BOTTOMDRAGLAW = False
+CDRAG = 0.0
+
+DT = 1800.0
+TIMEUNIT = 3600.0
+
+INPUTDIR = "/home/157/ahg157/mom6-spurious-experiments/config/internal_waves"

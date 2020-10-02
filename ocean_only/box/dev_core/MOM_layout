@@ -1,0 +1,8 @@
+NIHALO = 4                      ! default = 4
+                                ! The number of halo points on each side in the x-direction.  With
+                                ! STATIC_MEMORY_ this is set as NIHALO_ in MOM_memory.h at compile time; without
+                                ! STATIC_MEMORY_ the default is NIHALO_ in MOM_memory.h (if defined) or 2.
+NJHALO = 4                      ! default = 4
+                                ! The number of halo points on each side in the y-direction.  With
+                                ! STATIC_MEMORY_ this is set as NJHALO_ in MOM_memory.h at compile time; without
+                                ! STATIC_MEMORY_ the default is NJHALO_ in MOM_memory.h (if defined) or 2.
